@@ -60,21 +60,54 @@ pip install -r requirements.txt
 
 ## ⚙️ Configuração
 ### 🔒 Variáveis de Ambiente
-**React (client/.env)**
+**📁React (`client/.env`)**
+
+**1.** Navegue até a pasta client/.
+
+**2.** Crie um arquivo chamado .env (se ainda não existir).
+
+**3.** Adicione a seguinte variável:
+> Essa URL define onde está rodando o servidor Flask, que será acessado pelo frontend React.
+
 ```env
 VITE_API_URL=http://localhost:5000
 ```
+#
+**📁Node (`server/.env`)**
 
-**Node (server/.env)**
+**1.** Navegue até a pasta server/.
+
+**2.** Crie um arquivo chamado .env (se ainda não existir).
+
+**3.** Adicione a seguinte variável:
 ```env
 PORT=3001
 ```
-**Flask**
-No app.py ou .env, configure no arquivo main.py:
+> O backend Node.js irá escutar nessa porta pelas requisições vindas do Flask.
+#
+**📁Flask**
+
+No main.py ou .env, configure no arquivo main.py:
 ```env
 NODE_API_URL = "http://localhost:3001/upload"
 ```
 
 ## 🚀 Como Rodar
-> Use três terminais separados, um para cada serviço:
-### 1. Inicie o Node.js (porta 3001)
+Para facilitar o processo, há um arquivo chamado start-all.bat na raiz do projeto que abre os três servidores (client, Flask e Node) automaticamente em terminais separados.
+
+### ▶️ Como usar
+- Dê dois cliques no arquivo start-all.bat
+ou
+
+- Execute pelo terminal (cmd ou PowerShell):
+```bash
+start-all.bat
+```
+> 💡 Certifique-se de que você já instalou as dependências dos três serviços (client, server e server-flask) antes de executar.
+#
+## ⚠️ Observação
+- O script funciona apenas no Windows, pois usa comandos .bat.
+
+- Ele espera que os diretórios client/, server/ e server-flask/ estejam todos corretamente configurados e no mesmo nível da raiz do projeto.
+
+- O ambiente virtual do Flask (venv) precisa estar criado antes de rodar o script.
