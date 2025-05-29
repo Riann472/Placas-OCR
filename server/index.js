@@ -33,7 +33,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         }
     })
 
-    const worker = await OCR.createWorker('placanovo')
+    const worker = await OCR.createWorker('placa')
     await worker.setParameters({
         tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
         tessedit_pageseg_mode: '6',
