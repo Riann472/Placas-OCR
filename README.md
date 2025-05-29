@@ -36,7 +36,7 @@ leitor-placas-veiculares/
 ### 1. Clone o projeto
 ```bash
 git clone https://github.com/SEU_USUARIO/leitor-placas-veiculares.git
-cd leitor-placas-veiculares
+cd Placas-OCR
 ``` 
 ### 2. Instale o Frontend (React)
 ```bash
@@ -103,6 +103,7 @@ ou
 ```bash
 start-all.bat
 ```
+Aguarde todos os servidores iniciarem.
 > 💡 Certifique-se de que você já instalou as dependências dos três serviços (client, server e server-flask) antes de executar.
 #
 ## ⚠️ Observação
