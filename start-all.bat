@@ -8,6 +8,6 @@ start cmd /k "cd client && npm run dev"
 start cmd /k "cd server && npm run start"
 
 :: Iniciar o Flask (server-flask com venv)
-start cmd /k "cd server-flask && call flask\Scripts\activate && python -m flask --app main run"
+start cmd /k "cd server-flask && call venv\Scripts\activate && python -m flask --app main run"
 
 echo Todos os serviços foram iniciados em janelas separadas.
