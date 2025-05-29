@@ -5,14 +5,19 @@ function App() {
   const [preview, setPreview] = useState();
   const [file, setFile] = useState()
   const [placa, setPlaca] = useState()
+  const [loading, setLoading] = useState()
 
   async function submit(e) {
     e.preventDefault();
+    setPlaca(null)
+    setLoading(true)
     const form = new FormData();
     form.append('file', file, 'crop.jpg');
 
     try {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, form);
+      setLoading(false)
+
       if (result.data.error) {
         alert(result.data.error)
       } else {
@@ -42,6 +47,7 @@ function App() {
           }} />
 
           <img src={preview} alt="" />
+          {loading && (<h2>Carregando...</h2>)}
           {placa && (<h2>Resultado: {placa}</h2>)}
           <button>Enviar</button>
         </form>
