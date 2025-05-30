@@ -20,7 +20,6 @@ def upload():
 
     if file.filename == "":
         return jsonify({"error": "Nome de arquivo vazio!"}), 400
-
     file_bytes = file.read()
     imgBuffer = np.frombuffer(file_bytes, np.uint8)
     image = cv.imdecode(imgBuffer, cv.IMREAD_COLOR)
