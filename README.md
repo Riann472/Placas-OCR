@@ -35,7 +35,7 @@ leitor-placas-veiculares/
 ## 📦 Instalação
 ### 1. Clone o projeto
 ```bash
-git clone https://github.com/SEU_USUARIO/leitor-placas-veiculares.git
+git clone https://github.com/Riann472/Placas-OCR.git
 cd Placas-OCR
 ``` 
 ### 2. Instale o Frontend (React)
