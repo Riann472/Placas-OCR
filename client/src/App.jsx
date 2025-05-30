@@ -9,10 +9,13 @@ function App() {
 
   async function submit(e) {
     e.preventDefault();
+    if (!file) return
+
     setPlaca(null)
     setLoading(true)
     const form = new FormData();
     form.append('file', file, 'crop.jpg');
+
 
     try {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, form);
@@ -25,7 +28,7 @@ function App() {
       }
     } catch (err) {
       console.log(err)
-      alert("Erro na comunicação com o servidor.");
+      alert("err");
     }
   }
 
